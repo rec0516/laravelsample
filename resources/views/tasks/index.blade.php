@@ -37,6 +37,43 @@
 
                 <div class="column col-md-8">
                     <!-- ここにタスクが表示される -->
+                    <div class="panel panel-default">
+                        <div class="panel panel-heading">
+                            <div class="panel panel-body">
+                                <div class="text-right">
+                                    <a href="#" class="btn btn-default btn-block">
+                                        タスクを追加する
+                                    </a>
+                                </div>
+                            </div>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>タイトル</th>
+                                        <th>状態</th>
+                                        <th>期限</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($tasks as $task)
+                                    <tr>
+                                        <th>{{ $task->title }}</th>
+                                        <th>
+                                            <span class="{{ $task->status_class }}">{{ $task->status_label }}</span>
+                                        </th>
+                                        <th>{{ $task->formatted_due_date }}</th>
+                                        <th>
+                                            <a herf="#">編集</a>
+                                        </th>
+                                    </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+
                 </div>
             </div>
         </div>
